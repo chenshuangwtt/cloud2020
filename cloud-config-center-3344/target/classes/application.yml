@@ -1,0 +1,24 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/chenshuangwtt/springcloud-config.git  # git仓库名字
+          username: chenshuangwtt@163.com # your ysername
+          password: ting123456. #your password
+
+          # 搜索目录
+          search-paths:
+            - springcloud-config
+      # 读取分支
+      label: master
+
+# 服务注册到eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
